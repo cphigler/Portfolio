@@ -1,0 +1,8 @@
+SELECT LB.BranchName, COUNT(BK.BookId) AS 'No_Of_Books_On_Loan'
+FROM BOOK_LOANS AS BL
+INNER JOIN LIBRARY_BRANCH AS LB 
+ON BL.BranchId = LB.BranchId
+INNER JOIN BOOK AS BK
+ON BL.BookId= BK.BookId
+GROUP BY BranchName
+
